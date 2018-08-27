@@ -23,8 +23,8 @@
 #include <limits.h>
 #include <errno.h>
 
-#include <system/thread_defs.h>
-#include <cutils/sched_policy.h>
+#include "../../system/thread_defs.h"
+#include "../../cutils/sched_policy.h"
 
 /*
  * Conversion map for "nice" values.
