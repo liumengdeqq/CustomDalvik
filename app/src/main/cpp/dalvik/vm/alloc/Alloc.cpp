@@ -21,7 +21,7 @@
 #include "../alloc/Heap.h"
 #include "../alloc/HeapInternal.h"
 #include "../alloc/HeapSource.h"
-#include "../../cutils/atomic.h"
+#include "../../cutils/atomic-arm.h"
 #include "../../cutils/atomic-inline.h"
 #include "../../cutils/log.h"
 #include <stddef.h>
