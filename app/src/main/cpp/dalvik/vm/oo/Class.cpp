@@ -3265,13 +3265,13 @@ static bool createIftable(ClassObject* clazz)
                 }
             }
             if (j < 0) {
-                IF_ALOGV() {
-                    char* desc =
-                        dexProtoCopyMethodDescriptor(&imeth->prototype);
-                    ALOGV("No match for '%s' '%s' in '%s' (creating miranda)",
-                            imeth->name, desc, clazz->descriptor);
-                    free(desc);
-                }
+//                IF_ALOGV() {
+//                    char* desc =
+//                        dexProtoCopyMethodDescriptor(&imeth->prototype);
+//                    ALOGV("No match for '%s' '%s' in '%s' (creating miranda)",
+//                            imeth->name, desc, clazz->descriptor);
+//                    free(desc);
+//                }
                 //dvmThrowRuntimeException("Miranda!");
                 //return false;
 

@@ -68,7 +68,6 @@
 #include "analysis/DexVerify.h"
 #include "analysis/DexPrepare.h"
 #include "analysis/RegisterMap.h"
-#include "Init.h"
 #include "../libdex/DexOpcodes.h"
 #include "../libdex/InstrUtils.h"
 #include "AllocTracker.h"

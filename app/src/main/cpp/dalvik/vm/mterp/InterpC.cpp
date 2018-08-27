@@ -410,9 +410,9 @@ static inline bool checkForNullExportPC(Object* obj, u4* fp, const u2* pc)
  * Assumes the existence of "const u2* pc" and (for threaded operation)
  * "u2 inst".
  */
-# define H(_op)             &&op_##_op
-# define HANDLE_OPCODE(_op) op_##_op:
-# define FINISH(_offset) {                                                  \
+#define H(_op)             &&op_##_op
+#define HANDLE_OPCODE(_op) op_##_op:
+#define FINISH(_offset) {                                                  \
         ADJUST_PC(_offset);                                                 \
         inst = FETCH(0);                                                    \
         if (self->interpBreak.ctl.subMode) {                                \
