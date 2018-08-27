@@ -43,7 +43,7 @@
 #endif
 
 #else
-#error "Unsupported atomic operations for this platform"
+//#error "Unsupported atomic operations for this platform"
 #endif
 
 /*****************************************************************************/

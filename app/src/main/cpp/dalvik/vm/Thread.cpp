@@ -32,6 +32,7 @@
 #include <dirent.h>
 #include <errno.h>
 #include <fcntl.h>
+#include "Thread.h"
 
 #if defined(HAVE_PRCTL)
 #include <sys/prctl.h>
@@ -287,7 +288,7 @@ bool dvmThreadStartup()
         return false;
 
     /* switch mode for when we run initializers */
-    thread->status = THREAD_RUNNING;
+    thread->status =(volatile ThreadStatus) THREAD_RUNNING;
 
     /*
      * We need to assign the threadId early so we can lock/notify
@@ -382,7 +383,7 @@ void dvmLockThreadList(Thread* self)
 
     if (self != NULL) {
         oldStatus = self->status;
-        self->status = THREAD_VMWAIT;
+        self->status = (volatile ThreadStatus)THREAD_VMWAIT;
     } else {
         /* happens during VM shutdown */
         oldStatus = THREAD_UNDEFINED;  // shut up gcc
@@ -391,7 +392,7 @@ void dvmLockThreadList(Thread* self)
     dvmLockMutex(&gDvm.threadListLock);
 
     if (self != NULL)
-        self->status = oldStatus;
+        self->status = (volatile ThreadStatus)oldStatus;
 }
 
 /*
@@ -823,7 +824,7 @@ static Thread* allocThread(int interpStackSize)
 
     assert(interpStackSize >= kMinStackSize && interpStackSize <=kMaxStackSize);
 
-    thread->status = THREAD_INITIALIZING;
+    thread->status = (volatile ThreadStatus)THREAD_INITIALIZING;
 
     /*
      * Allocate and initialize the interpreted code stack.  We essentially
@@ -1410,7 +1411,7 @@ bool dvmCreateInterpThread(Object* threadObj, int reqStackSize)
      */
     dvmLockThreadList(self);
     assert(self->status == THREAD_RUNNING);
-    self->status = THREAD_VMWAIT;
+    self->status = (volatile ThreadStatus)THREAD_VMWAIT;
     while (newThread->status != THREAD_STARTING)
         pthread_cond_wait(&gDvm.threadStartCond, &gDvm.threadListLock);
 
@@ -1446,7 +1447,7 @@ bool dvmCreateInterpThread(Object* threadObj, int reqStackSize)
     dvmLockThreadList(self);
 
     assert(newThread->status == THREAD_STARTING);
-    newThread->status = THREAD_VMWAIT;
+    newThread->status = (volatile ThreadStatus)THREAD_VMWAIT;
     pthread_cond_broadcast(&gDvm.threadStartCond);
 
     dvmUnlockThreadList();
@@ -1482,7 +1483,7 @@ static void* interpThreadStart(void* arg)
      * Change our status and wake our parent, who will add us to the
      * thread list and advance our state to VMWAIT.
      */
-    self->status = THREAD_STARTING;
+    self->status =(volatile ThreadStatus) THREAD_STARTING;
     pthread_cond_broadcast(&gDvm.threadStartCond);
 
     /*
@@ -2140,7 +2141,7 @@ void dvmDetachCurrentThread()
     dvmDestroyJNIEnv(self->jniEnv);
     self->jniEnv = NULL;
 
-    self->status = THREAD_ZOMBIE;
+    self->status = (volatile ThreadStatus)THREAD_ZOMBIE;
 
     /*
      * Remove ourselves from the internal thread list.
@@ -2264,7 +2265,7 @@ void dvmSuspendSelf(bool jdwpActivity)
      * Suspend ourselves.
      */
     assert(self->suspendCount > 0);
-    self->status = THREAD_SUSPENDED;
+    self->status = (volatile ThreadStatus)THREAD_SUSPENDED;
     LOG_THREAD("threadid=%d: self-suspending (dbg)", self->threadId);
 
     /*
@@ -2295,7 +2296,7 @@ void dvmSuspendSelf(bool jdwpActivity)
         }
     }
     assert(self->suspendCount == 0 && self->dbgSuspendCount == 0);
-    self->status = THREAD_RUNNING;
+    self->status = (volatile ThreadStatus)THREAD_RUNNING;
     LOG_THREAD("threadid=%d: self-reviving (dbg), status=%d",
         self->threadId, self->status);
 
@@ -2863,7 +2864,7 @@ static bool fullSuspendCheck(Thread* self)
     if (needSuspend) {
         LOG_THREAD("threadid=%d: self-suspending", self->threadId);
         ThreadStatus oldStatus = self->status;      /* should be RUNNING */
-        self->status = THREAD_SUSPENDED;
+        self->status = (volatile ThreadStatus)THREAD_SUSPENDED;
 
         ATRACE_BEGIN("DVM Suspend");
         while (self->suspendCount != 0) {
@@ -2877,7 +2878,7 @@ static bool fullSuspendCheck(Thread* self)
         }
         ATRACE_END();
         assert(self->suspendCount == 0 && self->dbgSuspendCount == 0);
-        self->status = oldStatus;
+        self->status = (volatile ThreadStatus)oldStatus;
         LOG_THREAD("threadid=%d: self-reviving, status=%d",
             self->threadId, self->status);
     }
@@ -3126,7 +3127,7 @@ void dvmDumpThread(Thread* thread, bool isRunning)
 {
     DebugOutputTarget target;
 
-    dvmCreateLogOutputTarget(&target, ANDROID_LOG_INFO, LOG_TAG);
+//    dvmCreateLogOutputTarget(&target, ANDROID_LOG_INFO, LOG_TAG);
     dvmDumpThreadEx(&target, thread, isRunning);
 }
 
@@ -3481,7 +3482,7 @@ void dvmDumpAllThreads(bool grabLock)
 {
     DebugOutputTarget target;
 
-    dvmCreateLogOutputTarget(&target, ANDROID_LOG_INFO, LOG_TAG);
+//    dvmCreateLogOutputTarget(&target, ANDROID_LOG_INFO, LOG_TAG);
     dvmDumpAllThreadsEx(&target, grabLock);
 }
 

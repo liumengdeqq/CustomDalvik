@@ -16,7 +16,8 @@
 
 #ifndef DALVIK_INDIRECTREFTABLE_H_
 #define DALVIK_INDIRECTREFTABLE_H_
-#include "IndirectRefTable.h"
+
+#include "Dalvik.h"
 /*
  * Maintain a table of indirect references.  Used for local/global JNI
  * references.
