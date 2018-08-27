@@ -17,7 +17,7 @@
 /*
  * Indirect reference table management.
  */
-#include "Dalvik.h"
+
 
 static void abortMaybe() {
     // If CheckJNI is on, it'll give a more detailed error before aborting.

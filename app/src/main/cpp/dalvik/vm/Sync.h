@@ -19,6 +19,7 @@
 #ifndef DALVIK_SYNC_H_
 #define DALVIK_SYNC_H_
 
+#include "Dalvik.h"
 /*
  * Monitor shape field.  Used to distinguish immediate thin locks from
  * indirecting fat locks.

@@ -27,7 +27,7 @@
  * "resolved stuff" tables for static fields and methods, because they do
  * not perform initialization.)
  */
-#include "../Dalvik.h"
+#include "Resolve.h"
 
 #include <stdlib.h>
 

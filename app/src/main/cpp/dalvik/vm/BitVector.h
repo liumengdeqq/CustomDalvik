@@ -19,7 +19,7 @@
  */
 #ifndef DALVIK_BITVECTOR_H_
 #define DALVIK_BITVECTOR_H_
-
+#include "Dalvik.h"
 /*
  * Expanding bitmap, used for tracking resources.  Bits are numbered starting
  * from zero.

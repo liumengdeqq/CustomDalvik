@@ -16,7 +16,7 @@
 /*
  * instanceof, checkcast, etc.
  */
-#include "../Dalvik.h"
+#include "TypeCheck.h"
 
 #include <stdlib.h>
 

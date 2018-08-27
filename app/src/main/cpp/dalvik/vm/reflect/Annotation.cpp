@@ -32,7 +32,7 @@
  * annotation types, but their only purpose is to allow the system
  * annotations to share name space with standard annotations.
  */
-#include "Dalvik.h"
+#include "../Dalvik.h"
 
 // fwd
 static Object* processEncodedAnnotation(const ClassObject* clazz,\

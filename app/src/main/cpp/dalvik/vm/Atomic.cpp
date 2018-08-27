@@ -16,7 +16,7 @@
 
 #include "Dalvik.h"
 
-#include <cutils/atomic.h>
+#include "../cutils/atomic.h"
 
 #if defined(__arm__)
 #include <machine/cpu-features.h>

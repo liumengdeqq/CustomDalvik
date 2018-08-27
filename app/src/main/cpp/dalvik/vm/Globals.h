@@ -34,7 +34,7 @@
 
 #include <stdarg.h>
 #include <pthread.h>
-
+#include "Dalvik.h"
 /* private structures */
 struct GcHeap;
 struct BreakpointSet;

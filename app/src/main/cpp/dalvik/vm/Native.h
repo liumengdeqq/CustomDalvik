@@ -22,6 +22,7 @@
 #ifndef DALVIK_NATIVE_H_
 #define DALVIK_NATIVE_H_
 
+#include "Dalvik.h"
 /*
  * Method description; equivalent to a JNI struct.
  */

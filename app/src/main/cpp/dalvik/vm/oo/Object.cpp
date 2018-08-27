@@ -17,7 +17,7 @@
 /*
  * Operations on an Object.
  */
-#include "../Dalvik.h"
+#include "Object.h"
 
 /*
  * Find a matching field, in the current class only.

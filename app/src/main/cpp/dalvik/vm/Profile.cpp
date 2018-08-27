@@ -30,7 +30,7 @@
 #include <errno.h>
 #include <fcntl.h>
 
-#include <cutils/open_memstream.h>
+#include "../cutils/open_memstream.h"
 
 #ifdef HAVE_ANDROID_OS
 # define UPDATE_MAGIC_PAGE      1

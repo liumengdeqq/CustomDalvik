@@ -41,7 +41,7 @@
 #include "interp/Jit.h"         // need for self verification
 #endif
 
- #include <cutils/trace.h>
+ #include "../cutils/trace.h"
 
 /* desktop Linux needs a little help with gettid() */
 #if defined(HAVE_GETTID) && !defined(HAVE_ANDROID_OS)

@@ -16,7 +16,7 @@
 /*
  * Basic reflection calls and utility functions.
  */
-#include "../Dalvik.h"
+#include "Reflect.h"
 
 #include <stdlib.h>
 

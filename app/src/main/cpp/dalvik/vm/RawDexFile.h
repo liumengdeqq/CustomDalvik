@@ -21,6 +21,7 @@
 #ifndef DALVIK_RAWDEXFILE_H_
 #define DALVIK_RAWDEXFILE_H_
 
+#include "Dalvik.h"
 /*
  * Structure representing a "raw" DEX file, in its unswapped unoptimized
  * state.

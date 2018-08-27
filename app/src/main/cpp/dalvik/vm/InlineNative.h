@@ -20,6 +20,7 @@
 #ifndef DALVIK_INLINENATIVE_H_
 #define DALVIK_INLINENATIVE_H_
 
+#include "Dalvik.h"
 /* startup/shutdown */
 bool dvmInlineNativeStartup(void);
 void dvmInlineNativeShutdown(void);

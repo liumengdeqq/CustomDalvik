@@ -23,6 +23,7 @@
 #ifndef DALVIK_REFERENCETABLE_H_
 #define DALVIK_REFERENCETABLE_H_
 
+#include "Dalvik.h"
 /*
  * Table definition.
  *

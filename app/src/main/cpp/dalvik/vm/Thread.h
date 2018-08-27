@@ -24,7 +24,7 @@
 #include "interp/InterpState.h"
 
 #include <errno.h>
-#include <cutils/sched_policy.h>
+#include "../cutils/sched_policy.h"
 
 #if defined(CHECK_MUTEX) && !defined(__USE_UNIX98)
 /* glibc lacks this unless you #define __USE_UNIX98 */

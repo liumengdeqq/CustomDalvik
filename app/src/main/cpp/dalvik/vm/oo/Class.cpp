@@ -21,7 +21,7 @@
 
 #define LOG_CLASS_LOADING 0
 
-#include "../Dalvik.h"
+#include "Class.h"
 #include "../../libdex/DexClass.h"
 #include "../analysis/Optimize.h"
 

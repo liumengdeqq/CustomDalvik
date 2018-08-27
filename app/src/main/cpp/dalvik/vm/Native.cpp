@@ -116,12 +116,12 @@ void dvmResolveNativeMethod(const u4* args, JValue* pResult,
         return;
     }
 
-    IF_ALOGW() {
-        char* desc = dexProtoCopyMethodDescriptor(&method->prototype);
-        ALOGW("No implementation found for native %s.%s:%s",
-            clazz->descriptor, method->name, desc);
-        free(desc);
-    }
+//    IF_ALOGW() {
+//        char* desc = dexProtoCopyMethodDescriptor(&method->prototype);
+//        ALOGW("No implementation found for native %s.%s:%s",
+//            clazz->descriptor, method->name, desc);
+//        free(desc);
+//    }
 
     dvmThrowUnsatisfiedLinkError("Native method not found", method);
 }
@@ -245,17 +245,17 @@ static void freeSharedLibEntry(void* ptr)
  * (Should we have this take buffer+len and avoid the alloc?  It gets
  * called very rarely.)
  */
-char* dvmCreateSystemLibraryName(char* libName)
-{
-    char buf[256];
-    int len;
-
-    len = snprintf(buf, sizeof(buf), OS_SHARED_LIB_FORMAT_STR, libName);
-    if (len >= (int) sizeof(buf))
-        return NULL;
-    else
-        return strdup(buf);
-}
+//char* dvmCreateSystemLibraryName(char* libName)
+//{
+//    char buf[256];
+//    int len;
+//
+//    len = snprintf(buf, sizeof(buf), OS_SHARED_LIB_FORMAT_STR, libName);
+//    if (len >= (int) sizeof(buf))
+//        return NULL;
+//    else
+//        return strdup(buf);
+//}
 
 /*
  * Check the result of an earlier call to JNI_OnLoad on this library.  If

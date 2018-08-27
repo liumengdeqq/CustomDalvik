@@ -19,6 +19,7 @@
 #ifndef DALVIK_LINEARALLOC_H_
 #define DALVIK_LINEARALLOC_H_
 
+#include "Dalvik.h"
 /*
  * If this is set, we create additional data structures and make many
  * additional mprotect() calls.

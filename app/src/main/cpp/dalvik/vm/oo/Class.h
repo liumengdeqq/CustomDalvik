@@ -18,7 +18,7 @@
  */
 #ifndef DALVIK_OO_CLASS_H_
 #define DALVIK_OO_CLASS_H_
-
+#include "../Dalvik.h"
 #include "../../libdex/DexClass.h"
 
 /*

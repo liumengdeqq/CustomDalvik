@@ -16,7 +16,7 @@
 
 #include "os.h"
 
-#include "Dalvik.h"
+#include "../Dalvik.h"
 
 #include <sys/time.h>
 #include <sys/resource.h>

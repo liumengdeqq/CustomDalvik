@@ -22,6 +22,7 @@
 #ifndef DALVIK_HASH_H_
 #define DALVIK_HASH_H_
 
+#include "Dalvik.h"
 /* compute the hash of an item with a specific type */
 typedef u4 (*HashCompute)(const void* item);
 

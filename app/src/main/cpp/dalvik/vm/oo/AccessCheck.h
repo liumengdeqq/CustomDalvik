@@ -18,7 +18,7 @@
  */
 #ifndef DALVIK_OO_ACCESSCHECK_H_
 #define DALVIK_OO_ACCESSCHECK_H_
-
+#include "../Dalvik.h"
 /*
  * Determine whether the "accessFrom" class is allowed to get at "clazz".
  */

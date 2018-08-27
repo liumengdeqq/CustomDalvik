@@ -16,7 +16,7 @@
 /*
  * Array objects.
  */
-#include "../Dalvik.h"
+#include "Array.h"
 
 #include <stdlib.h>
 #include <stddef.h>

@@ -20,7 +20,7 @@
 #define DALVIK_JNIINTERNAL_H_
 
 #include "jni.h"
-
+#include "Dalvik.h"
 /* system init/shutdown */
 bool dvmJniStartup(void);
 void dvmJniShutdown(void);

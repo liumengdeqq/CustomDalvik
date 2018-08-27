@@ -16,7 +16,7 @@
 /*
  * Check access to fields and methods.
  */
-#include "../Dalvik.h"
+#include "AccessCheck.h"
 
 /*
  * Return the #of initial characters that match.

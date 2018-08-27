@@ -23,7 +23,7 @@
 #ifndef NOT_VM      /* for utilities that sneakily include this file */
 
 #include <stdio.h>
-
+#include "Dalvik.h"
 struct Thread;      // extern
 
 

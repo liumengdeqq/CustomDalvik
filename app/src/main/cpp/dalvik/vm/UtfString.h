@@ -23,7 +23,7 @@
 
 #include <string>
 #include <vector>
-
+#include "Dalvik.h"
 /*
  * (This is private to UtfString.c, but we cheat a bit and also use it
  * for InlineNative.c.  Not really worth creating a separate header.)

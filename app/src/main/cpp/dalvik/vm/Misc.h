@@ -28,7 +28,8 @@
 #include <sys/time.h>
 
 #include "Inlines.h"
-
+#include "Dalvik.h"
+#include "../cutils/atomic-arm.h"
 /*
  * Used to shut up the compiler when a parameter isn't used.
  */
@@ -75,8 +76,8 @@ void dvmPrintHexDumpEx(int priority, const char* tag, const void* vaddr,
  * Print a hex dump, at INFO level.
  */
 INLINE void dvmPrintHexDump(const void* vaddr, size_t length) {
-    dvmPrintHexDumpEx(ANDROID_LOG_INFO, LOG_TAG,
-        vaddr, length, kHexDumpLocal);
+//    dvmPrintHexDumpEx(ANDROID_LOG_INFO, LOG_TAG,
+//        vaddr, length, kHexDumpLocal);
 }
 
 /*
@@ -85,8 +86,8 @@ INLINE void dvmPrintHexDump(const void* vaddr, size_t length) {
 INLINE void dvmPrintHexDumpDbg(const void* vaddr, size_t length,const char* tag)
 {
 #if !LOG_NDEBUG
-    dvmPrintHexDumpEx(ANDROID_LOG_VERBOSE, (tag != NULL) ? tag : LOG_TAG,
-        vaddr, length, kHexDumpLocal);
+//    dvmPrintHexDumpEx(ANDROID_LOG_VERBOSE, (tag != NULL) ? tag : LOG_TAG,
+//        vaddr, length, kHexDumpLocal);
 #endif
 }
 

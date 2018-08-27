@@ -19,6 +19,7 @@
 #ifndef DALVIK_INTERN_H_
 #define DALVIK_INTERN_H_
 
+#include "Dalvik.h"
 bool dvmStringInternStartup(void);
 void dvmStringInternShutdown(void);
 StringObject* dvmLookupInternedString(StringObject* strObj);
