@@ -18,12 +18,12 @@
 #include <limits.h>
 #include <sys/mman.h>
 
-#include "Dalvik.h"
-#include "alloc/Heap.h"
-#include "alloc/HeapBitmap.h"
-#include "alloc/HeapInternal.h"
-#include "alloc/HeapSource.h"
-#include "alloc/Verify.h"
+#include "../Dalvik.h"
+#include "../alloc/Heap.h"
+#include "../alloc/HeapBitmap.h"
+#include "../alloc/HeapInternal.h"
+#include "../alloc/HeapSource.h"
+#include "../alloc/Verify.h"
 
 /*
  * A "mostly copying", generational, garbage collector.

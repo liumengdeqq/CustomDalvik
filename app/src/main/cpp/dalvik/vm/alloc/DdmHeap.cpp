@@ -19,12 +19,12 @@
 #include <sys/time.h>
 #include <time.h>
 
-#include "Dalvik.h"
-#include "alloc/Heap.h"
-#include "alloc/HeapInternal.h"
-#include "alloc/DdmHeap.h"
-#include "alloc/DlMalloc.h"
-#include "alloc/HeapSource.h"
+#include "../Dalvik.h"
+#include "../alloc/Heap.h"
+#include "../alloc/HeapInternal.h"
+#include "../alloc/DdmHeap.h"
+#include "../alloc/DlMalloc.h"
+#include "../alloc/HeapSource.h"
 
 #define DEFAULT_HEAP_ID  1
 

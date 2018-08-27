@@ -18,8 +18,7 @@
  */
 #ifndef DALVIK_ALLOC_ALLOC_H_
 #define DALVIK_ALLOC_ALLOC_H_
-
-#include <stddef.h>
+#include "../Dalvik.h"
 
 /* flags for dvmMalloc */
 enum {

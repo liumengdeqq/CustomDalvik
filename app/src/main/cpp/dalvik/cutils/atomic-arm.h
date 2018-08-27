@@ -1,7 +1,7 @@
 //
 // Created by liu meng on 2018/8/21.
 //
-#include "../common.h"
+#include "../vm/common.h"
 #ifndef CUSTOMAPPVMP_ATOMIC_ARM_H
 #define CUSTOMAPPVMP_ATOMIC_ARM_H
 #ifndef ANDROID_ATOMIC_INLINE

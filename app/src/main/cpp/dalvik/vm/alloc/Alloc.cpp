@@ -16,14 +16,15 @@
 /*
  * Garbage-collecting memory allocator.
  */
-#include "../Dalvik.h"
+#include "Alloc.h"
 #include "../Globals.h"
 #include "../alloc/Heap.h"
 #include "../alloc/HeapInternal.h"
 #include "../alloc/HeapSource.h"
-#include "cutils/atomic.h"
-#include "cutils/atomic-inline.h"
+#include "../../cutils/atomic.h"
+#include "../../cutils/atomic-inline.h"
 #include "../../cutils/log.h"
+#include <stddef.h>
 /*
  * Initialize the GC universe.
  *
