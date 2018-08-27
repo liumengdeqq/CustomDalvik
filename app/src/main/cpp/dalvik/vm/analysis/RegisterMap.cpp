@@ -20,13 +20,13 @@
  * precision in the garbage collector when scanning references in the
  * interpreter thread stacks.
  */
-#include "Dalvik.h"
-#include "UniquePtr.h"
-#include "analysis/CodeVerify.h"
-#include "analysis/RegisterMap.h"
-#include "libdex/DexCatch.h"
-#include "libdex/InstrUtils.h"
-#include "libdex/Leb128.h"
+#include "../Dalvik.h"
+#include "../../utils/UniquePtr.h"
+#include "../analysis/CodeVerify.h"
+#include "../analysis/RegisterMap.h"
+#include "../../libdex/DexCatch.h"
+#include "../../libdex/InstrUtils.h"
+#include "../../libdex/Leb128.h"
 
 #include <stddef.h>
 
@@ -1061,12 +1061,12 @@ const RegisterMap* dvmGetExpandedRegisterMap0(Method* method)
     }
 #endif
 
-    IF_ALOGV() {
-        char* desc = dexProtoCopyMethodDescriptor(&method->prototype);
-        ALOGV("Expanding map -> %s.%s:%s",
-            method->clazz->descriptor, method->name, desc);
-        free(desc);
-    }
+//    IF_ALOGV() {
+//        char* desc = dexProtoCopyMethodDescriptor(&method->prototype);
+//        ALOGV("Expanding map -> %s.%s:%s",
+//            method->clazz->descriptor, method->name, desc);
+//        free(desc);
+//    }
 
     /*
      * Update method, and free compressed map if it was sitting on the heap.

@@ -24,6 +24,7 @@
 #ifndef DALVIK_INTERP_DEFS_H_
 #define DALVIK_INTERP_DEFS_H_
 
+#include "../Dalvik.h"
 #if defined(WITH_JIT)
 /*
  * Size of save area for callee-save FP regs, which are not automatically
@@ -118,7 +119,7 @@ static inline s4 s4FromSwitchData(const void* switchData) {
 }
 #else
 static inline s4 s4FromSwitchData(const void* switchData) {
-    u2* data = switchData;
+    u2* data = (u2 *)switchData;
     return data[0] | (((s4) data[1]) << 16);
 }
 #endif

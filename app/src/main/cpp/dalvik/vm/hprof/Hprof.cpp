@@ -23,8 +23,8 @@
  */
 
 #include "Hprof.h"
-#include "alloc/HeapInternal.h"
-#include "alloc/Visit.h"
+#include "../alloc/HeapInternal.h"
+#include "../alloc/Visit.h"
 
 #include <string.h>
 #include <unistd.h>

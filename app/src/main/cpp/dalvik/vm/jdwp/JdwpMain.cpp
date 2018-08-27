@@ -17,16 +17,16 @@
 /*
  * JDWP initialization.
  */
-#include "jdwp/JdwpPriv.h"
-#include "Dalvik.h"
-#include "Atomic.h"
+#include "../jdwp/JdwpPriv.h"
+#include "../Dalvik.h"
+#include "../Atomic.h"
 
 #include <stdlib.h>
 #include <unistd.h>
 #include <sys/time.h>
 #include <time.h>
 #include <errno.h>
-
+#include "../../cutils/atomic-arm.h"
 
 static void* jdwpThreadStart(void* arg);
 
@@ -76,7 +76,7 @@ JdwpState* dvmJdwpStartup(const JdwpStartupParams* pParams)
     JdwpState* state = NULL;
 
     /* comment this out when debugging JDWP itself */
-    android_setMinPriority(LOG_TAG, ANDROID_LOG_DEBUG);
+//    android_setMinPriority(LOG_TAG, ANDROID_LOG_DEBUG);
 
     state = (JdwpState*) calloc(1, sizeof(JdwpState));
 

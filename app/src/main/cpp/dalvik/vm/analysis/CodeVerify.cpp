@@ -28,10 +28,9 @@
 #include "../analysis/RegisterMap.h"
 #include "../../libdex/DexCatch.h"
 #include "../../libdex/InstrUtils.h"
-
 #include <stddef.h>
-
-
+#include "VerifySubs.h"
+#include "VfyBasicBlock.h"
 /*
  * We don't need to store the register data for many instructions, because
  * we either only need it at branch points (for verification) or GC points
@@ -3619,14 +3618,14 @@ static bool doCodeVerification(VerifierData* vdata, RegisterTable* regTable)
     dvmInsnSetChanged(insnFlags, 0, true);
 
     if (dvmWantVerboseVerification(meth)) {
-        IF_ALOGI() {
-            char* desc = dexProtoCopyMethodDescriptor(&meth->prototype);
-            ALOGI("Now verifying: %s.%s %s (ins=%d regs=%d)",
-                meth->clazz->descriptor, meth->name, desc,
-                meth->insSize, meth->registersSize);
-            ALOGI(" ------ [0    4    8    12   16   20   24   28   32   36");
-            free(desc);
-        }
+//        IF_ALOGI() {
+//            char* desc = dexProtoCopyMethodDescriptor(&meth->prototype);
+//            ALOGI("Now verifying: %s.%s %s (ins=%d regs=%d)",
+//                meth->clazz->descriptor, meth->name, desc,
+//                meth->insSize, meth->registersSize);
+//            ALOGI(" ------ [0    4    8    12   16   20   24   28   32   36");
+//            free(desc);
+//        }
         debugVerbose = true;
         gDebugVerbose = true;
     } else {
@@ -3762,13 +3761,13 @@ static bool doCodeVerification(VerifierData* vdata, RegisterTable* regTable)
             }
         }
         if (deadStart >= 0) {
-            IF_ALOGD() {
-                char* desc = dexProtoCopyMethodDescriptor(&meth->prototype);
-                ALOGD("VFY: dead code 0x%04x-%04x in %s.%s %s",
-                    deadStart, insnIdx-1,
-                    meth->clazz->descriptor, meth->name, desc);
-                free(desc);
-            }
+//            IF_ALOGD() {
+//                char* desc = dexProtoCopyMethodDescriptor(&meth->prototype);
+//                ALOGD("VFY: dead code 0x%04x-%04x in %s.%s %s",
+//                    deadStart, insnIdx-1,
+//                    meth->clazz->descriptor, meth->name, desc);
+//                free(desc);
+//            }
         }
     }
 

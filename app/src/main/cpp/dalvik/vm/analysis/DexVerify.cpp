@@ -18,9 +18,9 @@
  * Dalvik classfile verification.  This file contains the verifier entry
  * points and the static constraint checks.
  */
-#include "Dalvik.h"
-#include "analysis/CodeVerify.h"
-#include "libdex/DexCatch.h"
+#include "DexVerify.h"
+#include "../analysis/CodeVerify.h"
+#include "../../libdex/DexCatch.h"
 
 
 /* fwd */

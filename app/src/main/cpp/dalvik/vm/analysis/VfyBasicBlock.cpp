@@ -17,12 +17,12 @@
 /*
  * Verifier basic block functions.
  */
-#include "Dalvik.h"
-#include "analysis/VfyBasicBlock.h"
-#include "analysis/CodeVerify.h"
-#include "analysis/VerifySubs.h"
-#include "libdex/DexCatch.h"
-#include "libdex/InstrUtils.h"
+
+#include "../analysis/VfyBasicBlock.h"
+#include "../analysis/CodeVerify.h"
+#include "../analysis/VerifySubs.h"
+#include "../../libdex/DexCatch.h"
+#include "../../libdex/InstrUtils.h"
 
 
 /*

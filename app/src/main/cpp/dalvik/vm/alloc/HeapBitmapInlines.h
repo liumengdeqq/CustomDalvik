@@ -17,6 +17,7 @@
 #ifndef DALVIK_HEAP_BITMAPINLINES_H_
 #define DALVIK_HEAP_BITMAPINLINES_H_
 
+#include "HeapBitmap.h"
 static unsigned long dvmHeapBitmapSetAndReturnObjectBit(HeapBitmap *hb, const void *obj) __attribute__((used));
 static void dvmHeapBitmapSetObjectBit(HeapBitmap *hb, const void *obj) __attribute__((used));
 static void dvmHeapBitmapClearObjectBit(HeapBitmap *hb, const void *obj) __attribute__((used));

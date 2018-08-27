@@ -17,7 +17,7 @@
 #include "DlMalloc.h"
 
 #include <stdint.h>
-#include "Common.h"
+#include "../Common.h"
 
 /* Dalvik specific morecore implementation defined in HeapSource.cpp. */
 #define MORECORE(x) dvmHeapSourceMorecore(m, x)
@@ -36,11 +36,11 @@ static void heap_error(const char* msg, const char* function, void* p);
  * dlmalloc for our use for mspaces (regular dlmalloc is still declared
  * in bionic).
  */
-#include "../../../bionic/libc/upstream-dlmalloc/malloc.c"
+#include "/Users/liumeng/Desktop/qunar/android/bionic/libc/upstream-dlmalloc/malloc.c"
 
 
 static void heap_error(const char* msg, const char* function, void* p) {
-    ALOG(LOG_FATAL, LOG_TAG, "@@@ ABORTING: DALVIK: %s IN %s addr=%p", msg,
+    ALOGD("@@@ ABORTING: DALVIK: %s IN %s addr=%p", msg,
          function, p);
     /* So that we can get a memory dump around p */
     *((int **) 0xdeadbaad) = (int *) p;

@@ -21,9 +21,9 @@
 
 #define LOG_TAG "jdwp"
 
-#include "jdwp/Jdwp.h"
-#include "jdwp/JdwpEvent.h"
-#include "Debugger.h"
+#include "../jdwp/Jdwp.h"
+#include "../jdwp/JdwpEvent.h"
+#include "../Debugger.h"
 
 #include <pthread.h>
 #include <sys/uio.h>

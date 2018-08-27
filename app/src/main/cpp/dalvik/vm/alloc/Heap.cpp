@@ -35,8 +35,8 @@
 #include <sys/time.h>
 #include <limits.h>
 #include <errno.h>
-#include <cutils/trace.h>
-#include <cutils/process_name.h>
+#include "../../cutils/trace.h"
+#include "../../cutils/process_name.h"
 
 #ifdef HAVE_ANDROID_OS
 #include "cutils/properties.h"

@@ -24,10 +24,10 @@
  * as the VM that reads it.  Still, it should be better documented and
  * more rigorously structured.
  */
-#include "Dalvik.h"
-#include "libdex/OptInvocation.h"
-#include "analysis/RegisterMap.h"
-#include "analysis/Optimize.h"
+#include "DexPrepare.h"
+#include "../../libdex/OptInvocation.h"
+#include "../analysis/RegisterMap.h"
+#include "../analysis/Optimize.h"
 
 #include <string>
 

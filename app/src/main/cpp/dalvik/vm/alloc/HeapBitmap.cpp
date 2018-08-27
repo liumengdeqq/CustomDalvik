@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-#include "Dalvik.h"
 #include "HeapBitmap.h"
 #include <sys/mman.h>   /* for PROT_* */
 

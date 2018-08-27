@@ -14,11 +14,8 @@
  * limitations under the License.
  */
 
-#include "Dalvik.h"
-#include "alloc/HeapBitmap.h"
-#include "alloc/HeapSource.h"
-#include "alloc/Verify.h"
-#include "alloc/Visit.h"
+
+#include "Verify.h"
 
 /*
  * Visitor applied to each reference field when searching for things

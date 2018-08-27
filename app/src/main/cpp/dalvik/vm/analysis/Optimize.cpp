@@ -18,7 +18,6 @@
  * Perform some simple bytecode optimizations, chiefly "quickening" of
  * opcodes.
  */
-#include "../Dalvik.h"
 #include "../../libdex/InstrUtils.h"
 #include "Optimize.h"
 
@@ -862,13 +861,13 @@ Method* dvmOptResolveMethod(ClassObject* referrer, u4 methodIdx,
     bool allowed = dvmCheckMethodAccess(referrer, resMethod);
     untweakLoader(referrer, resMethod->clazz);
     if (!allowed) {
-        IF_ALOGI() {
-            char* desc = dexProtoCopyMethodDescriptor(&resMethod->prototype);
-            ALOGI("DexOpt: illegal method access (call %s.%s %s from %s)",
-                resMethod->clazz->descriptor, resMethod->name, desc,
-                referrer->descriptor);
-            free(desc);
-        }
+//        IF_ALOGI() {
+//            char* desc = dexProtoCopyMethodDescriptor(&resMethod->prototype);
+//            ALOGI("DexOpt: illegal method access (call %s.%s %s from %s)",
+//                resMethod->clazz->descriptor, resMethod->name, desc,
+//                referrer->descriptor);
+//            free(desc);
+//        }
         if (pFailure != NULL)
             *pFailure = VERIFY_ERROR_ACCESS_METHOD;
         return NULL;

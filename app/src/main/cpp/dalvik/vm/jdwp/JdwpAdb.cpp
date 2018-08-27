@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-#include "jdwp/JdwpPriv.h"
-#include "jdwp/JdwpHandler.h"
+#include "../jdwp/JdwpPriv.h"
+#include "../jdwp/JdwpHandler.h"
 #include <sys/socket.h>
 #include <sys/un.h>
 #include <errno.h>
 #include <unistd.h>
-#include <cutils/sockets.h>
+#include "../../cutils/sockets.h"
 
 /*
  * The JDWP <-> ADB transport protocol is explained in detail

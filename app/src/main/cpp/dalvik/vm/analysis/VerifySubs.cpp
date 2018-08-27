@@ -17,9 +17,9 @@
 /*
  * Dalvik verification subroutines.
  */
-#include "Dalvik.h"
-#include "analysis/CodeVerify.h"
-#include "libdex/InstrUtils.h"
+#include "VerifySubs.h"
+#include "../analysis/CodeVerify.h"
+#include "../../libdex/InstrUtils.h"
 
 
 /*
@@ -51,17 +51,17 @@ void dvmLogVerifyFailure(const Method* meth, const char* format, ...)
         return;
         //logLevel = ANDROID_LOG_DEBUG;
     } else {
-        logLevel = ANDROID_LOG_WARN;
+//        logLevel = ANDROID_LOG_WARN;
     }
 
-    va_start(ap, format);
-    LOG_PRI_VA(logLevel, LOG_TAG, format, ap);
-    if (meth != NULL) {
-        char* desc = dexProtoCopyMethodDescriptor(&meth->prototype);
-        LOG_PRI(logLevel, LOG_TAG, "VFY:  rejected %s.%s %s",
-            meth->clazz->descriptor, meth->name, desc);
-        free(desc);
-    }
+//    va_start(ap, format);
+//    LOG_PRI_VA(logLevel, LOG_TAG, format, ap);
+//    if (meth != NULL) {
+//        char* desc = dexProtoCopyMethodDescriptor(&meth->prototype);
+//        LOG_PRI(logLevel, LOG_TAG, "VFY:  rejected %s.%s %s",
+//            meth->clazz->descriptor, meth->name, desc);
+//        free(desc);
+//    }
 }
 
 /*

@@ -20,6 +20,7 @@
 #ifndef DALVIK_EXCEPTION_H_
 #define DALVIK_EXCEPTION_H_
 
+#include "Dalvik.h"
 /*
  * Create a Throwable and throw an exception in the current thread (where
  * "throwing" just means "set the thread's exception pointer").

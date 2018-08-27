@@ -22,7 +22,7 @@
 
 #include "jni.h"
 #include <stdarg.h>
-
+#include "../Dalvik.h"
 /*
 Stack layout
 

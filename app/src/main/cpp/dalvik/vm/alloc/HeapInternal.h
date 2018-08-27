@@ -20,7 +20,7 @@
 #define DALVIK_ALLOC_HEAP_INTERNAL_H_
 
 #include "MarkSweep.h"
-
+#include "../Dalvik.h"
 struct HeapSource;
 
 struct GcHeap {
@@ -78,16 +78,13 @@ void dvmUnlockHeap(void);
 #define LOGV_HEAP(...)    ((void)0)
 #define LOGD_HEAP(...)    ((void)0)
 #else
-#define LOGV_HEAP(...)    ALOG(LOG_VERBOSE, HEAP_LOG_TAG, __VA_ARGS__)
-#define LOGD_HEAP(...)    ALOG(LOG_DEBUG, HEAP_LOG_TAG, __VA_ARGS__)
+#define LOGV_HEAP(...)
+#define LOGD_HEAP(...)
 #endif
-#define LOGI_HEAP(...) \
-    do { \
-        if (!gDvm.zygote) { ALOG(LOG_INFO, HEAP_LOG_TAG, __VA_ARGS__); } \
-    } while (0)
+#define LOGI_HEAP(...)
 
-#define LOGW_HEAP(...)    ALOG(LOG_WARN, HEAP_LOG_TAG, __VA_ARGS__)
-#define LOGE_HEAP(...)    ALOG(LOG_ERROR, HEAP_LOG_TAG, __VA_ARGS__)
+#define LOGW_HEAP(...)
+#define LOGE_HEAP(...)
 
 #define FRACTIONAL_MB(n)    (n) / (1024 * 1024), \
                             ((((n) % (1024 * 1024)) / 1024) * 1000) / 1024

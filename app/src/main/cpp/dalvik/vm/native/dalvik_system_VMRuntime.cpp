@@ -17,13 +17,13 @@
 /*
  * dalvik.system.VMRuntime
  */
-#include "Dalvik.h"
-#include "ScopedPthreadMutexLock.h"
-#include "UniquePtr.h"
-#include "alloc/HeapSource.h"
-#include "alloc/Visit.h"
-#include "libdex/DexClass.h"
-#include "native/InternalNativePriv.h"
+#include "../Dalvik.h"
+#include "../../ScopedPthreadMutexLock.h"
+#include "../../utils/UniquePtr.h"
+#include "../alloc/HeapSource.h"
+#include "../alloc/Visit.h"
+#include "../../libdex/DexClass.h"
+#include "../native/InternalNativePriv.h"
 
 #include <limits.h>
 
@@ -277,7 +277,7 @@ static DvmDex* getDvmDexFromClassPathEntry(ClassPathEntry* cpe) {
     if (cpe->kind == kCpeJar) {
         return ((JarFile*) cpe->ptr)->pDvmDex;
     }
-    LOG_ALWAYS_FATAL("Unknown cpe->kind=%d", cpe->kind);
+//    LOG_ALWAYS_FATAL("Unknown cpe->kind=%d", cpe->kind);
 }
 
 typedef std::map<std::string, StringObject*> StringTable;
@@ -285,7 +285,7 @@ typedef std::map<std::string, StringObject*> StringTable;
 static void preloadDexCachesStringsVisitor(void* addr, u4 threadId, RootType type, void* arg) {
     StringTable& table = *(StringTable*) arg;
     StringObject* strObj = *(StringObject**) addr;
-    LOG_FATAL_IF(strObj->clazz != gDvm.classJavaLangString, "Unknown class for supposed string");
+//    LOG_FATAL_IF(strObj->clazz != gDvm.classJavaLangString, "Unknown class for supposed string");
     char* newStr = dvmCreateCstrFromString(strObj);
     // ALOGI("VMRuntime.preloadDexCaches interned=%s", newStr);
     table[newStr] = strObj;

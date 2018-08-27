@@ -17,17 +17,17 @@
 #include <stdint.h>
 #include <sys/mman.h>
 #include <errno.h>
-#include <cutils/ashmem.h>
-
+#include "../../cutils/ashmem.h"
+#include "../../cutils/atomic.h"
 #define SIZE_MAX UINT_MAX  // TODO: get SIZE_MAX from stdint.h
 
-#include "Dalvik.h"
-#include "alloc/DlMalloc.h"
-#include "alloc/Heap.h"
-#include "alloc/HeapInternal.h"
-#include "alloc/HeapSource.h"
-#include "alloc/HeapBitmap.h"
-#include "alloc/HeapBitmapInlines.h"
+#include "../Dalvik.h"
+#include "../alloc/DlMalloc.h"
+#include "../alloc/Heap.h"
+#include "../alloc/HeapInternal.h"
+#include "../alloc/HeapSource.h"
+#include "../alloc/HeapBitmap.h"
+#include "../alloc/HeapBitmapInlines.h"
 
 static void dvmHeapSourceUpdateMaxNativeFootprint();
 static void snapIdealFootprint();
