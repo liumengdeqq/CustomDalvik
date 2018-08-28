@@ -11,7 +11,7 @@
 #include <errno.h>
 #include <fcntl.h>
 #include "sched_policy.h"
-#include "log.h"
+#include "customlog.h"
 
 /* Re-map SP_DEFAULT to the system default policy, and leave other values unchanged.
  * Call this any place a SchedPolicy is used as an input parameter.

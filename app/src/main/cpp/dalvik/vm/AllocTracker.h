@@ -22,8 +22,21 @@
 /* initialization */
 bool dvmAllocTrackerStartup(void);
 void dvmAllocTrackerShutdown(void);
+#define kMaxAllocRecordStackDepth   16      /* max 255 */
 
-struct AllocRecord;
+#define kDefaultNumAllocRecords 64*1024 /* MUST be power of 2 */
+
+struct AllocRecord {
+    ClassObject*    clazz;      /* class allocated in this block */
+    u4              size;       /* total size requested */
+    u2              threadId;   /* simple thread ID; could be recycled */
+
+    /* stack trace elements; unused entries have method==NULL */
+    struct {
+        const Method* method;   /* which method we're executing in */
+        int         pc;         /* current execution offset, in 16-bit units */
+    } stackElem[kMaxAllocRecordStackDepth];
+};
 
 /*
  * Enable allocation tracking.  Does nothing if tracking is already enabled.

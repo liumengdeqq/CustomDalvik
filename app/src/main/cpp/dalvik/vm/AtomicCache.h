@@ -162,12 +162,6 @@ void dvmFreeAtomicCache(AtomicCache* cache);
  * Making the last argument optional, instead of merely unused, saves us
  * a few percent in the ATOMIC_CACHE_LOOKUP time.
  */
-void dvmUpdateAtomicCache(u4 key1, u4 key2, u4 value, AtomicCacheEntry* pEntry,
-    u4 firstVersion
-#if CALC_CACHE_STATS > 0
-    , AtomicCache* pCache
-#endif
-    );
 
 /*
  * Debugging.

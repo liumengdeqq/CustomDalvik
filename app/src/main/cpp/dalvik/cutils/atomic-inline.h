@@ -27,17 +27,13 @@ extern "C" {
  */
 
 #if !defined(ANDROID_SMP)
-# error "Must define ANDROID_SMP before including atomic-inline.h"
+//# error "Must define ANDROID_SMP before including atomic-inline.h"
 #endif
 
 #if defined(__arm__)
-#include <cutils/atomic-arm.h>
-#elif defined(__i386__) || defined(__x86_64__)
-#include <cutils/atomic-x86.h>
-#elif defined(__mips__)
-#include <cutils/atomic-mips.h>
+#include "atomic-arm.h"
 #else
-#error atomic operations are unsupported
+//#error atomic operations are unsupported
 #endif
 
 #if ANDROID_SMP == 0

@@ -2,8 +2,8 @@
 // Created by liu meng on 2018/8/27.
 //
 
-#ifndef CUSTOMDALVIK_LOG_H
-#define CUSTOMDALVIK_LOG_H
+#ifndef CUTILS_LOG_H_
+#define CUTILS_LOG_H_
 
 #include <android/log.h>
 #define ALOGV(a,...)
@@ -11,8 +11,8 @@
 #define ALOGE(a,...)
 #define ALOGI(a,...)
 #define ALOGD(a,...)
-#define LOG_VFY(a,...)
-#define LOG_VFY_METH(a,...)
+//#define LOG_VFY(a,...)
+//#define LOG_VFY_METH(a,...)
 #define LOGVV(...) ((void)0)
 #define LOG_PRI_VA(a,...)
 #define LOG_PRI(a,...)
@@ -97,4 +97,5 @@ fmt, ##__VA_ARGS__); \
 #else
 # define MY_LOG_ASSERT(...) MY_LOG_NOOP
 
-#endif //CUSTOMDALVIK_LOG_H
+#endif
+#endif

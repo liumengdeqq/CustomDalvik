@@ -203,7 +203,7 @@ struct Thread {
 #endif
 
     /* JNI local reference tracking */
-    IndirectRefTable jniLocalRefTable;
+     IndirectRefTable jniLocalRefTable;
 
 #if defined(WITH_JIT)
 #if defined(WITH_SELF_VERIFICATION)

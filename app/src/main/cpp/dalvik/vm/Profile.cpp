@@ -18,7 +18,7 @@
  * Android's method call profiling goodies.
  */
 #include "Dalvik.h"
-#include <interp/InterpDefs.h>
+#include "interp/InterpDefs.h"
 
 #include <stdlib.h>
 #include <stddef.h>

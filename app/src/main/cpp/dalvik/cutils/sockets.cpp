@@ -2,7 +2,7 @@
 // Created by liu meng on 2018/8/28.
 //
 
-#include "log.h"
+#include "customlog.h"
 #include "sockets.h"
 
 #ifdef HAVE_ANDROID_OS

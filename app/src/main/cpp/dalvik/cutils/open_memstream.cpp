@@ -360,7 +360,4 @@ Test4
 good
 DONE
 */
-
-#endif
-
 #endif /*!HAVE_OPEN_MEMSTREAM*/

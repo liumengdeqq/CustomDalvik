@@ -48,24 +48,10 @@
 static bool isPowerOfTwo(int x) { return (x & (x - 1)) == 0; }
 #endif
 
-#define kMaxAllocRecordStackDepth   16      /* max 255 */
-
-#define kDefaultNumAllocRecords 64*1024 /* MUST be power of 2 */
 
 /*
  * Record the details of an allocation.
  */
-struct AllocRecord {
-    ClassObject*    clazz;      /* class allocated in this block */
-    u4              size;       /* total size requested */
-    u2              threadId;   /* simple thread ID; could be recycled */
-
-    /* stack trace elements; unused entries have method==NULL */
-    struct {
-        const Method* method;   /* which method we're executing in */
-        int         pc;         /* current execution offset, in 16-bit units */
-    } stackElem[kMaxAllocRecordStackDepth];
-};
 
 /*
  * Initialize a few things.  This gets called early, so keep activity to

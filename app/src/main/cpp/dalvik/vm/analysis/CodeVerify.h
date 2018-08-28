@@ -138,7 +138,7 @@ struct RegisterLine {
     MonitorEntries* monitorEntries;
     u4*             monitorStack;
     unsigned int    monitorStackTop;
-    BitVector*      liveRegs;
+    struct BitVector*      liveRegs;
 };
 
 /*

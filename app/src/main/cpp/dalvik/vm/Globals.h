@@ -526,7 +526,7 @@ struct DvmGlobals {
     /*
      * JNI global reference table.
      */
-    IndirectRefTable jniGlobalRefTable;
+     IndirectRefTable jniGlobalRefTable;
     IndirectRefTable jniWeakGlobalRefTable;
     pthread_mutex_t jniGlobalRefLock;
     pthread_mutex_t jniWeakGlobalRefLock;
@@ -649,7 +649,7 @@ struct DvmGlobals {
      * non-NULL.
      */
     pthread_mutex_t allocTrackerLock;
-    AllocRecord*    allocRecords;
+    struct AllocRecord*    allocRecords;
     int             allocRecordHead;        /* most-recently-added entry */
     int             allocRecordCount;       /* #of valid entries */
     int             allocRecordMax;         /* Number of allocated entries. */

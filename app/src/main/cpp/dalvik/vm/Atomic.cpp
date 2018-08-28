@@ -16,10 +16,10 @@
 
 #include "Dalvik.h"
 
-#include "../cutils/atomic.h"
+#include "../cutils/atomic-arm.h"
 
 #if defined(__arm__)
-#include <machine/cpu-features.h>
+#include "../cutils/cpu-features.h"
 #endif
 
 /*****************************************************************************/

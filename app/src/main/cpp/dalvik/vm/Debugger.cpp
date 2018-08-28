@@ -2790,12 +2790,12 @@ void dvmDbgExecuteMethod(DebugInvokeReq* pReq)
 
     assert(sizeof(jvalue) == sizeof(u8));
 
-    IF_ALOGV() {
-        char* desc = dexProtoCopyMethodDescriptor(&meth->prototype);
-        ALOGV("JDWP invoking method %p/%p %s.%s:%s",
-            pReq->method, meth, meth->clazz->descriptor, meth->name, desc);
-        free(desc);
-    }
+//    IF_ALOGV() {
+//        char* desc = dexProtoCopyMethodDescriptor(&meth->prototype);
+//        ALOGV("JDWP invoking method %p/%p %s.%s:%s",
+//            pReq->method, meth, meth->clazz->descriptor, meth->name, desc);
+//        free(desc);
+//    }
 
     dvmCallMethodA(self, meth, pReq->obj, false, &pReq->resultValue,
         (jvalue*)pReq->argArray);
@@ -2947,8 +2947,8 @@ void dvmDbgDdmDisconnected()
 void dvmDbgDdmSendChunk(int type, size_t len, const u1* buf)
 {
     assert(buf != NULL);
-    struct iovec vec[1] = { {(void*)buf, len} };
-    dvmDbgDdmSendChunkV(type, vec, 1);
+//    struct iovec vec[1] = { {(void*)buf, len} };
+//    dvmDbgDdmSendChunkV(type, vec, 1);
 }
 
 /*

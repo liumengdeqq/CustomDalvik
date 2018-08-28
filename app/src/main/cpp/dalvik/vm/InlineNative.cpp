@@ -883,12 +883,12 @@ Method* dvmResolveInlineNative(int opIndex)
     }
 
     gDvm.inlinedMethods[opIndex] = method;
-    IF_ALOGV() {
-        char* desc = dexProtoCopyMethodDescriptor(&method->prototype);
-        ALOGV("Registered for profile: %s.%s %s",
-            method->clazz->descriptor, method->name, desc);
-        free(desc);
-    }
+//    IF_ALOGV() {
+//        char* desc = dexProtoCopyMethodDescriptor(&method->prototype);
+//        ALOGV("Registered for profile: %s.%s %s",
+//            method->clazz->descriptor, method->name, desc);
+//        free(desc);
+//    }
 
     return method;
 }
