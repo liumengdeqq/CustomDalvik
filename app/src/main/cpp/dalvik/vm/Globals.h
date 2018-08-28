@@ -526,7 +526,7 @@ struct DvmGlobals {
     /*
      * JNI global reference table.
      */
-     IndirectRefTable jniGlobalRefTable;
+    IndirectRefTable jniGlobalRefTable;
     IndirectRefTable jniWeakGlobalRefTable;
     pthread_mutex_t jniGlobalRefLock;
     pthread_mutex_t jniWeakGlobalRefLock;

@@ -255,35 +255,7 @@ private:
 #define kPinTableMaxSize            1024
 #define kPinComplainThreshold       10
 
-bool dvmJniStartup() {
-    if (!gDvm.jniGlobalRefTable.init(kGlobalRefsTableInitialSize,
-                                 kGlobalRefsTableMaxSize,
-                                 kIndirectKindGlobal)) {
-        return false;
-    }
-    if (!gDvm.jniWeakGlobalRefTable.init(kWeakGlobalRefsTableInitialSize,
-                                 kGlobalRefsTableMaxSize,
-                                 kIndirectKindWeakGlobal)) {
-        return false;
-    }
 
-    dvmInitMutex(&gDvm.jniGlobalRefLock);
-    dvmInitMutex(&gDvm.jniWeakGlobalRefLock);
-
-    if (!dvmInitReferenceTable(&gDvm.jniPinRefTable, kPinTableInitialSize, kPinTableMaxSize)) {
-        return false;
-    }
-
-    dvmInitMutex(&gDvm.jniPinRefLock);
-
-    return true;
-}
-
-void dvmJniShutdown() {
-    gDvm.jniGlobalRefTable.destroy();
-    gDvm.jniWeakGlobalRefTable.destroy();
-    dvmClearReferenceTable(&gDvm.jniPinRefTable);
-}
 
 bool dvmIsBadJniVersion(int version) {
   // We don't support JNI_VERSION_1_1. These are the only other valid versions.
