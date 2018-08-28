@@ -14,6 +14,8 @@
 #define LOG_VFY(a,...)
 #define LOG_VFY_METH(a,...)
 #define LOGVV(...) ((void)0)
+#define LOG_PRI_VA(a,...)
+#define LOG_PRI(a,...)
 #define MY_LOG_LEVEL_VERBOSE 1
 #define MY_LOG_LEVEL_DEBUG 2
 #define MY_LOG_LEVEL_INFO 3
